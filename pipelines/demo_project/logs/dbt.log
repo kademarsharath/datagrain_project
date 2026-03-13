@@ -1,0 +1,319 @@
+==================== 2026-03-13T22:09:19.294783Z | 019ce93f-33b9-7800-a120-53b580ca9b60 ====================
+22:09:19.295274 [info ]: Installing dbt project and profile setup
+22:09:19.304777 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+22:09:19.305037 [info ]: Success Project created successfully!
+22:09:19.305060 [info ]: Info Project name: jaffle_shop
+22:09:19.305093 [info ]: Info Project directory: jaffle_shop
+22:09:19.305131 [info ]: Info Setting up your profile...
+22:09:19.306443 [info ]: Info Creating new profile...
+22:09:21.884771 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+22:23:49.859043 [info ]: Success Profile written to /Users/ksharath/.dbt/profiles.yml
+22:23:49.866202 [info ]: Validating profile inputs, adapters, and connection
+
+22:23:49.867153 [info ]: dbt-fusion 2.0.0-preview.148
+22:23:49.872052 [info ]: Started loading project
+22:23:49.893363 [info ]: Loading ~/.dbt/profiles.yml
+22:23:49.901778 [info ]: Finished loading project [  0.03s]
+22:23:49.902827 [info ]: Started debugging
+22:23:49.902885 [info ]: Debugging profile: dev
+22:23:49.902919 [info ]: Debugging dbt version: 2.0.0-preview.148
+22:23:49.902950 [info ]: Debugging platform: macos aarch64 (unix)
+22:23:49.903152 [info ]: Debugging adapter type: databricks (remote)
+22:23:49.994289 [info ]: Debugging dependencies:
+  git: OK
+22:23:49.996155 [info ]: Debugging connection:
+  "schema": "dbt_project",
+  "host": "https://dbc-64c4c1ca-16f7.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/b55efce1f1fee952"
+22:23:58.043289 [info ]: Finished debugging [  8.14s]
+22:23:58.044079 [error]: dbt1011: dbt was unable to connect to the specified database.
+The following error was returned:
+
+execution error: failed to initialize authenticator: unable to generate oauth2.Config: could not lookup provider details: Get "https://https//dbc-64c4c1ca-16f7.cloud.databricks.com/oidc/.well-known/openid-configuration": dial tcp: lookup https: no such host
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+22:23:59.235825 [info ]: New version available 2.0.0-preview.153 (run `dbt system update`)
+22:24:00.981841 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [14m 42s]
+==================== 2026-03-13T22:25:03.869353Z | 019ce94d-9d72-7840-be1d-1d1bd2ccec80 ====================
+22:25:03.871623 [info ]: Installing dbt project and profile setup
+22:25:03.873253 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_1' instead
+22:25:03.883747 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+22:25:03.884188 [info ]: Success Project created successfully!
+22:25:03.884211 [info ]: Info Project name: jaffle_shop_1
+22:25:03.884239 [info ]: Info Project directory: jaffle_shop_1
+22:25:03.884446 [info ]: Info Setting up your profile...
+22:25:03.889353 [info ]: Loading ~/.dbt/profiles.yml
+22:25:03.892927 [info ]: Info Creating new profile...
+22:25:05.485503 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+22:26:07.938691 [info ]: Success Profile written to /Users/ksharath/.dbt/profiles.yml
+22:26:07.939925 [info ]: Validating profile inputs, adapters, and connection
+
+22:26:07.940184 [info ]: dbt-fusion 2.0.0-preview.148
+22:26:07.942752 [info ]: Started loading project
+22:26:07.959738 [info ]: Loading ~/.dbt/profiles.yml
+22:26:07.969664 [info ]: Finished loading project [  0.03s]
+22:26:07.970245 [info ]: Started debugging
+22:26:07.970312 [info ]: Debugging profile: dev
+22:26:07.970346 [info ]: Debugging dbt version: 2.0.0-preview.148
+22:26:07.970362 [info ]: Debugging platform: macos aarch64 (unix)
+22:26:07.970675 [info ]: Debugging adapter type: databricks (remote)
+22:26:08.057321 [info ]: Debugging dependencies:
+  git: OK
+22:26:08.059218 [info ]: Debugging connection:
+  "schema": "dbt_project",
+  "host": "dbc-64c4c1ca-16f7.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/b55efce1f1fee952"
+22:26:09.595002 [info ]: Finished debugging [  1.62s]
+22:26:09.595790 [error]: dbt1011: dbt was unable to connect to the specified database.
+The following error was returned:
+
+execution error: failed to ping database: databricks: request error: error connecting: host=dbc-64c4c1ca-16f7.cloud.databricks.com port=443, httpPath=/sql/1.0/warehouses/b55efce1f1fee952: databricks: request error: open session request error: Post "https://dbc-64c4c1ca-16f7.cloud.databricks.com:443/sql/1.0/warehouses/b55efce1f1fee952": request error after 1 attempt(s): Post "https://dbc-64c4c1ca-16f7.cloud.databricks.com:443/sql/1.0/warehouses/b55efce1f1fee952": unable to get token source: listen tcp 127.0.0.1:8020: bind: address already in use
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+22:26:10.607556 [info ]: New version available 2.0.0-preview.153 (run `dbt system update`)
+22:26:10.861332 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [1m 7s]
+==================== 2026-03-13T22:28:31.751589Z | 019ce950-c97b-7c93-8638-96f274c34dc0 ====================
+22:28:31.753715 [info ]: Installing dbt project and profile setup
+22:28:31.755383 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_2' instead
+22:28:31.766746 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+22:28:31.767215 [info ]: Success Project created successfully!
+22:28:31.767236 [info ]: Info Project name: jaffle_shop_2
+22:28:31.767267 [info ]: Info Project directory: jaffle_shop_2
+22:28:31.767461 [info ]: Info Setting up your profile...
+22:28:31.772304 [info ]: Loading ~/.dbt/profiles.yml
+22:28:31.775431 [info ]: Info Creating new profile...
+22:29:38.010093 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+22:30:41.342913 [info ]: Success Profile written to /Users/ksharath/.dbt/profiles.yml
+22:30:41.343976 [info ]: Validating profile inputs, adapters, and connection
+
+22:30:41.344248 [info ]: dbt-fusion 2.0.0-preview.148
+22:30:41.346524 [info ]: Started loading project
+22:30:41.362166 [info ]: Loading ~/.dbt/profiles.yml
+22:30:41.370594 [info ]: Finished loading project [  0.02s]
+22:30:41.371388 [info ]: Started debugging
+22:30:41.371453 [info ]: Debugging profile: dev
+22:30:41.371485 [info ]: Debugging dbt version: 2.0.0-preview.148
+22:30:41.371504 [info ]: Debugging platform: macos aarch64 (unix)
+22:30:41.371802 [info ]: Debugging adapter type: databricks (remote)
+22:30:41.446641 [info ]: Debugging dependencies:
+  git: OK
+22:30:41.448863 [info ]: Debugging connection:
+  "schema": "dbt_project",
+  "host": "dbc-64c4c1ca-16f7.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/b55efce1f1fee952"
+22:30:42.517737 [info ]: Finished debugging [  1.15s]
+22:30:42.518492 [error]: dbt1011: dbt was unable to connect to the specified database.
+The following error was returned:
+
+execution error: failed to ping database: databricks: request error: error connecting: host=dbc-64c4c1ca-16f7.cloud.databricks.com port=443, httpPath=/sql/1.0/warehouses/b55efce1f1fee952: databricks: request error: open session request error: Post "https://dbc-64c4c1ca-16f7.cloud.databricks.com:443/sql/1.0/warehouses/b55efce1f1fee952": Provided PAT token does not have required scopes: sql: request error after 1 attempt(s): unexpected HTTP status 403 Forbidden
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+22:30:43.665016 [info ]: New version available 2.0.0-preview.153 (run `dbt system update`)
+22:30:43.901049 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [2m 12s]
+==================== 2026-03-13T22:33:15.003988Z | 019ce955-1bef-7010-9eae-e72e43f412b4 ====================
+22:33:15.006445 [info ]: Installing dbt project and profile setup
+22:33:15.008344 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_3' instead
+22:33:15.019542 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+22:33:15.020008 [info ]: Success Project created successfully!
+22:33:15.020039 [info ]: Info Project name: jaffle_shop_3
+22:33:15.020073 [info ]: Info Project directory: jaffle_shop_3
+22:33:15.020277 [info ]: Info Setting up your profile...
+22:33:15.025225 [info ]: Loading ~/.dbt/profiles.yml
+22:33:15.028443 [info ]: Info Creating new profile...
+22:33:16.306328 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+22:33:59.597039 [info ]: Success Profile written to /Users/ksharath/.dbt/profiles.yml
+22:33:59.597850 [info ]: Validating profile inputs, adapters, and connection
+
+22:33:59.598036 [info ]: dbt-fusion 2.0.0-preview.148
+22:33:59.600183 [info ]: Started loading project
+22:33:59.617509 [info ]: Loading ~/.dbt/profiles.yml
+22:33:59.627125 [info ]: Finished loading project [  0.03s]
+22:33:59.627944 [info ]: Started debugging
+22:33:59.628008 [info ]: Debugging profile: dev
+22:33:59.628041 [info ]: Debugging dbt version: 2.0.0-preview.148
+22:33:59.628057 [info ]: Debugging platform: macos aarch64 (unix)
+22:33:59.628371 [info ]: Debugging adapter type: databricks (remote)
+22:33:59.700634 [info ]: Debugging dependencies:
+  git: OK
+22:33:59.702598 [info ]: Debugging connection:
+  "schema": "dbt_project",
+  "host": "dbc-64c4c1ca-16f7.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/b55efce1f1fee952"
+22:34:01.902902 [info ]: Finished debugging [  2.27s]
+22:34:01.903938 [error]: dbt1011: dbt was unable to connect to the specified database.
+The following error was returned:
+
+execution error: failed to ping database: databricks: request error: error connecting: host=dbc-64c4c1ca-16f7.cloud.databricks.com port=443, httpPath=/sql/1.0/warehouses/b55efce1f1fee952: databricks: request error: open session request error: Post "https://dbc-64c4c1ca-16f7.cloud.databricks.com:443/sql/1.0/warehouses/b55efce1f1fee952": Provided PAT token does not have required scopes: sql: request error after 1 attempt(s): unexpected HTTP status 403 Forbidden
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+22:34:03.940632 [info ]: New version available 2.0.0-preview.153 (run `dbt system update`)
+22:34:04.046184 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [49.0s]
+==================== 2026-03-13T22:34:19.880132Z | 019ce956-1966-7322-bf74-3237f4df2d51 ====================
+22:34:19.880198 [info ]: Installing dbt project and profile setup
+22:34:19.880293 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_4' instead
+22:34:19.888880 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+22:34:19.888935 [info ]: Success Project created successfully!
+22:34:19.888955 [info ]: Info Project name: jaffle_shop_4
+22:34:19.888974 [info ]: Info Project directory: jaffle_shop_4
+22:34:19.888992 [info ]: Info Setting up your profile...
+22:34:19.889367 [info ]: Loading ~/.dbt/profiles.yml
+22:34:19.889706 [info ]: Info Creating new profile...
+22:34:21.193893 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+22:34:55.738381 [info ]: Success Profile written to /Users/ksharath/.dbt/profiles.yml
+22:34:55.738608 [info ]: Validating profile inputs, adapters, and connection
+
+22:34:55.738689 [info ]: dbt-fusion 2.0.0-preview.148
+22:34:55.738989 [info ]: Started loading project
+22:34:55.744538 [info ]: Loading ~/.dbt/profiles.yml
+22:34:55.746192 [info ]: Finished loading project [  0.01s]
+22:34:55.746319 [info ]: Started debugging
+22:34:55.746400 [info ]: Debugging profile: dev
+22:34:55.746473 [info ]: Debugging dbt version: 2.0.0-preview.148
+22:34:55.746505 [info ]: Debugging platform: macos aarch64 (unix)
+22:34:55.746544 [info ]: Debugging adapter type: databricks (remote)
+22:34:55.818772 [info ]: Debugging dependencies:
+  git: OK
+22:34:55.818878 [info ]: Debugging connection:
+  "schema": "dbt_project",
+  "host": "dbc-64c4c1ca-16f7.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/b55efce1f1fee952"
+22:34:56.348451 [info ]: Finished debugging [  0.60s]
+22:34:56.348641 [error]: dbt1011: dbt was unable to connect to the specified database.
+The following error was returned:
+
+execution error: failed to ping database: databricks: request error: error connecting: host=dbc-64c4c1ca-16f7.cloud.databricks.com port=443, httpPath=/sql/1.0/warehouses/b55efce1f1fee952: databricks: request error: open session request error: Post "https://dbc-64c4c1ca-16f7.cloud.databricks.com:443/sql/1.0/warehouses/b55efce1f1fee952": request error after 1 attempt(s): Post "https://dbc-64c4c1ca-16f7.cloud.databricks.com:443/sql/1.0/warehouses/b55efce1f1fee952": unable to get token source: listen tcp 127.0.0.1:8020: bind: address already in use
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+22:34:56.672601 [info ]: New version available 2.0.0-preview.153 (run `dbt system update`)
+22:34:56.778392 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [36.9s]
+==================== 2026-03-13T22:39:01.135124Z | 019ce95a-6401-7913-8b62-2a2ba4607254 ====================
+22:39:01.137864 [info ]: Installing dbt project and profile setup
+22:39:01.140680 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_5' instead
+22:39:01.153897 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+22:39:01.154694 [info ]: Success Project created successfully!
+22:39:01.154735 [info ]: Info Project name: jaffle_shop_5
+22:39:01.154766 [info ]: Info Project directory: jaffle_shop_5
+22:39:01.154939 [info ]: Info Setting up your profile...
+22:39:01.161009 [info ]: Loading ~/.dbt/profiles.yml
+22:39:01.168056 [info ]: Info Creating new profile...
+22:39:02.678387 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+22:39:32.883794 [info ]: Success Profile written to /Users/ksharath/.dbt/profiles.yml
+22:39:32.884670 [info ]: Validating profile inputs, adapters, and connection
+
+22:39:32.884872 [info ]: dbt-fusion 2.0.0-preview.148
+22:39:32.886970 [info ]: Started loading project
+22:39:32.904180 [info ]: Loading ~/.dbt/profiles.yml
+22:39:32.912430 [info ]: Finished loading project [  0.03s]
+22:39:32.913327 [info ]: Started debugging
+22:39:32.913391 [info ]: Debugging profile: dev
+22:39:32.913423 [info ]: Debugging dbt version: 2.0.0-preview.148
+22:39:32.913437 [info ]: Debugging platform: macos aarch64 (unix)
+22:39:32.913725 [info ]: Debugging adapter type: databricks (remote)
+22:39:33.000219 [info ]: Debugging dependencies:
+  git: OK
+22:39:33.002534 [info ]: Debugging connection:
+  "schema": "dbt_project",
+  "host": "dbc-64c4c1ca-16f7.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/b55efce1f1fee952"
+22:39:51.730705 [debug]: Query executed on node unknown:
+select 1 as id
+22:39:51.732968 [info ]: Debugging connection test: OK
+22:39:51.733694 [info ]: Debugged All checks passed!
+22:39:51.734046 [info ]: Finished debugging [ 18.82s]
+22:39:52.151188 [info ]: New version available 2.0.0-preview.154 (run `dbt system update`)
+22:39:52.259389 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' successfully for target 'dev' [51.1s]
+==================== 2026-03-13T22:45:07.670321Z | 019ce95f-fbcb-7a43-bdca-614da063edb9 ====================
+22:45:07.672444 [info ]: Installing dbt project and profile setup
+22:45:07.682769 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+22:45:07.684056 [info ]: Success Project created successfully!
+22:45:07.684093 [info ]: Info Project name: jaffle_shop
+22:45:07.684127 [info ]: Info Project directory: jaffle_shop
+22:45:07.684374 [info ]: Info Setting up your profile...
+22:45:07.689290 [info ]: Loading ~/.dbt/profiles.yml
+22:45:07.702510 [info ]: Profile 'jaffle_shop' already exists. You can choose how to proceed.
+22:45:27.067800 [info ]: Info Profile setup cancelled.
+22:45:27.070178 [info ]: Validating profile inputs, adapters, and connection
+
+22:45:27.070339 [info ]: dbt-fusion 2.0.0-preview.148
+22:45:27.071994 [info ]: Started loading project
+22:45:27.081885 [info ]: Loading ~/.dbt/profiles.yml
+22:45:27.086260 [info ]: Finished loading project [  0.01s]
+22:45:27.086685 [info ]: Started debugging
+22:45:27.086757 [info ]: Debugging profile: dev
+22:45:27.086795 [info ]: Debugging dbt version: 2.0.0-preview.148
+22:45:27.086812 [info ]: Debugging platform: macos aarch64 (unix)
+22:45:27.087101 [info ]: Debugging adapter type: databricks (remote)
+22:45:27.163614 [info ]: Debugging dependencies:
+  git: OK
+22:45:27.165470 [info ]: Debugging connection:
+  "schema": "dbt_project",
+  "host": "https://dbc-64c4c1ca-16f7.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/b55efce1f1fee952"
+22:45:30.501821 [info ]: Finished debugging [  3.42s]
+22:45:30.503315 [error]: dbt1011: dbt was unable to connect to the specified database.
+The following error was returned:
+
+execution error: failed to initialize authenticator: unable to generate oauth2.Config: could not lookup provider details: Get "https://https//dbc-64c4c1ca-16f7.cloud.databricks.com/oidc/.well-known/openid-configuration": dial tcp: lookup https: no such host
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+22:45:31.032657 [info ]: New version available 2.0.0-preview.154 (run `dbt system update`)
+22:45:31.144015 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [23.5s]
+==================== 2026-03-13T22:45:57.612486Z | 019ce960-beeb-7472-a67c-22d40aa7e2bb ====================
+22:45:57.612577 [info ]: Installing dbt project and profile setup
+22:45:57.621527 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+22:45:57.621624 [info ]: Success Project created successfully!
+22:45:57.621674 [info ]: Info Project name: jaffle_shop
+22:45:57.621702 [info ]: Info Project directory: jaffle_shop
+22:45:57.621733 [info ]: Info Setting up your profile...
+22:45:57.622072 [info ]: Loading ~/.dbt/profiles.yml
+22:45:57.624609 [info ]: Profile 'jaffle_shop' already exists. You can choose how to proceed.
+22:46:57.963270 [info ]: Info Creating new profile...
+22:46:59.109453 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+22:47:33.156527 [info ]: Info Backup created at /Users/ksharath/.dbt/profiles.yml.bkp
+22:47:33.158104 [info ]: Success Profile written to /Users/ksharath/.dbt/profiles.yml
+22:47:33.158377 [info ]: Validating profile inputs, adapters, and connection
+
+22:47:33.158408 [info ]: dbt-fusion 2.0.0-preview.148
+22:47:33.158519 [info ]: Started loading project
+22:47:33.159433 [info ]: Loading ~/.dbt/profiles.yml
+22:47:33.160377 [info ]: Finished loading project [  0.00s]
+22:47:33.160411 [info ]: Started debugging
+22:47:33.160429 [info ]: Debugging profile: dev
+22:47:33.160448 [info ]: Debugging dbt version: 2.0.0-preview.148
+22:47:33.160461 [info ]: Debugging platform: macos aarch64 (unix)
+22:47:33.160478 [info ]: Debugging adapter type: databricks (remote)
+22:47:33.229824 [info ]: Debugging dependencies:
+  git: OK
+22:47:33.229926 [info ]: Debugging connection:
+  "schema": "dbt_project",
+  "host": "https://dbc-64c4c1ca-16f7.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/b55efce1f1fee952"
+22:47:36.783154 [debug]: Query executed on node unknown:
+select 1 as id
+22:47:36.785849 [info ]: Debugging connection test: OK
+22:47:36.786094 [info ]: Debugged All checks passed!
+22:47:36.786185 [info ]: Finished debugging [  3.63s]
+22:47:37.231468 [info ]: New version available 2.0.0-preview.154 (run `dbt system update`)
+22:47:37.355786 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' successfully for target 'dev' [1m 40s]
