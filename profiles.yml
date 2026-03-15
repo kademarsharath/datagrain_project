@@ -1,0 +1,10 @@
+ingest_projects:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      host: dbc-64c4c1ca-16f7.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/b55efce1f1fee952
+      catalog: workspace
+      schema: dbt_project
+      token: "{{ env_var('DBT_DATABRICKS_TOKEN') }}"
