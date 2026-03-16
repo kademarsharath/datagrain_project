@@ -1,3 +1,0 @@
-astronomer-cosmos
-dbt-databricks
-databricks-sql-connector
