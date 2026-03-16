@@ -1,0 +1,9 @@
+models:
+  - name: stg_sales_transactions
+    description: Transaction data with basic cleaning and transformation applied, one row per transaction.
+    columns:
+      - name: transaction_id
+        description: The unique key for each transaction.
+        data_tests:
+          - not_null
+          - unique

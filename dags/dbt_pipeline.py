@@ -5,6 +5,22 @@ from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
 from cosmos.profiles import DatabricksTokenProfileMapping 
 
 
+
+from airflow.decorators import task
+from airflow.models import Variable
+from datetime import datetime
+
+@task
+def record_pipeline_metrics(table_name: str, row_count: int):
+    payload = {
+        "table": table_name,
+        "row_count": row_count,
+        "timestamp": datetime.utcnow().isoformat(),
+        "env": Variable.get("DBT_ENV", "dev"),
+    }
+    print(f"[OBSERVABILITY] {payload}")
+
+
 default_args = {
     "retries": 2,
     "retry_delay": timedelta(minutes=2),
@@ -60,25 +76,9 @@ profile_config = ProfileConfig(
 print(f"[INFO] Running dbt in ENV={ENV}, catalog={cfg['catalog']}")
 
 
-# Profile config using the Token mapping
-# profile_config = ProfileConfig(
-#     profile_name="ingest_project1",
-#     target_name="dev",
-#     profile_mapping=DatabricksTokenProfileMapping(
-#         conn_id="databricks_conn",   # <-- pulls token from Airflow
-#         profile_args={
-#             "catalog": "workspace",
-#             "schema": "dbt_project",
-#             "http_path": "/sql/1.0/warehouses/b55efce1f1fee952", 
-#             "auth_type": "token"
-#         },
-#     ),
-# )
-
-
 dbt_dag = DbtDag(
     dag_id="dbt_ingest_project1",
-    project_config=ProjectConfig("/usr/local/airflow/ingest_project1"),
+    project_config=ProjectConfig("/usr/local/airflow/pipelines/ingest_project1"),
     profile_config=profile_config,
     operator_args={
         "disable_openlineage": True, # This kills the KeyError: 'version' noise
