@@ -1,0 +1,21 @@
+==================== 2026-03-13T23:29:15.554419Z | 019ce988-6321-7bd0-8d1e-6b1143cd31cf ====================
+23:29:15.554476 [info ]: Installing dbt project and profile setup
+23:29:15.561751 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+23:29:15.561829 [info ]: Success Project created successfully!
+23:29:15.561856 [info ]: Info Project name: jaffle_shop
+23:29:15.561883 [info ]: Info Project directory: jaffle_shop
+23:29:15.561906 [info ]: Info Setting up your profile...
+23:29:15.562196 [info ]: Info Creating new profile...
+23:29:16.811995 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+23:29:51.951017 [info ]: Success Profile written to /Users/ksharath/projects/datagrain_project/profiles.yml/profiles.yml
+23:29:51.951342 [info ]: Validating profile inputs, adapters, and connection
+
+23:29:51.952432 [info ]: dbt-fusion 2.0.0-preview.148
+23:29:51.955595 [info ]: Started loading project
+23:29:51.977429 [info ]: Finished loading project [  0.02s]
+23:29:51.978113 [error]: dbt1005: No profiles.yml found at `/Users/ksharath/.dbt/profiles.yml` or `./profiles.yml`. 
+
+suggestion: Run `dbt init` to create a profiles.yml file and connect to your database. 
+23:29:52.087437 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [36.5s]
