@@ -3,7 +3,7 @@ with
 source as (
 
     -- {# This references seed (CSV) data - try switching to {{ source('ecom', 'raw_customers') }} #}
-    select * from {{ source('bronze', 'sales_customers') }}
+    select * from {{ source('bronze', 'sales_transactions') }}
 
 ),
 
@@ -12,11 +12,13 @@ renamed as (
     select
 
         ----------  ids
+        transactionID as transaction_id,
         customerID as customer_id,
 
-        ---------- text
-        first_name as customer_first_name,
-        last_name as customer_last_name
+        ---------- measures
+        unitPrice as unit_price,
+        quantity as quantity,
+        totalPrice as total_price
 
     from source
 
