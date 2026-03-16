@@ -1,11 +1,20 @@
 version: 2
 
 # Try using these source definitions instead!
+
 sources:
-  - name: ecom
-    schema: "{{ target.schema }}"
-    description: E-commerce data for the Jaffle Shop
+  - name: bronze
+    schema: "{{ target.schema }}_raw"
+    description: Bronze layer data, as ingested from source systems, with minimal transformation applied.
     tables:
+      - name: sales_customers
+        description: One record per person who has purchased one or more items
+      - name: sales_franchaises
+        description: One record per franchisee who operates one or more stores
+      - name: sales_suppliers
+        description: One record per supplier who provides items for sale
+      - name: sales_transactions
+        description: One record per transaction where items are sold
       - name: raw_customers
         description: One record per person who has purchased one or more items
       - name: raw_orders
@@ -21,5 +30,3 @@ sources:
         description: One record per SKU for items sold in stores
       - name: raw_supplies
         description: One record per supply per SKU of items sold in stores
-      - name: sales_customers
-        description: One record per person who has purchased one or more items, with a different unique key than raw_customers
