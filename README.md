@@ -1,12 +1,12 @@
 Overview
 ========
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+Welcome to DataGrain Project! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
 
 Project Contents
 ================
 
-Your Astro project contains the following files and folders:
+Your Project contains the following files and folders:
 
 - dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
     - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
@@ -16,11 +16,19 @@ Your Astro project contains the following files and folders:
 - requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
 - plugins: Add custom or community plugins for your project to this file. It is empty by default.
 - airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+- dbt_pipelines : Create DBT pipelien automatically from comso by infering to the lineage from marts and staging
 
 Deploy Your Project Locally
 ===========================
 
 Start Airflow on your local machine by running 'astro dev start'.
+Pre requisites:
+databricks_dev_conn:  Set the host: <xx.databricks.com>, login: "token" password: <your_access_token>
+databricks_prod_conn: Set the host: <xx.databricks.com>, login: "token" password: <your_access_token>
+Refer to dags/dbt_pipeline.py for sample demo of DAG:
+DAG component:
+    1. Profile setup: DatabricksTokenProfileMapping is used to read the databricks_dev_conn or databricks_prod_conn during runtime
+    2. catalog and schema or different for different environment.
 
 This command will spin up five Docker containers on your machine, each for a different Airflow component:
 
