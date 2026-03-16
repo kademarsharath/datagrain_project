@@ -1,0 +1,37 @@
+name: Deploy Airflow DAGs
+
+on:
+  push:
+    branches:
+      - "**"   # all branches
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # 🔑 THIS IS THE KEY STEP
+      - name: Decide environment based on branch
+        run: |
+          echo "Git branch: $GITHUB_REF_NAME"
+
+          if [[ "$GITHUB_REF_NAME" == "main" ]]; then
+            echo "DBT_ENV=prod" >> $GITHUB_ENV
+            echo "DEPLOY_TARGET=airflow-prod" >> $GITHUB_ENV
+          else
+            echo "DBT_ENV=dev" >> $GITHUB_ENV
+            echo "DEPLOY_TARGET=airflow-dev" >> $GITHUB_ENV
+          fi
+
+      - name: Show resolved environment
+        run: |
+          echo "DBT_ENV=$DBT_ENV"
+          echo "DEPLOY_TARGET=$DEPLOY_TARGET"
+
+      # ---- SIMULATED DEPLOY STEP ----
+      - name: Simulate Airflow deploy
+        run: |
+          echo "Deploying DAGs to $DEPLOY_TARGET with DBT_ENV=$DBT_ENV"
