@@ -1,5 +1,8 @@
 name: ingest_project1
 
+version: "1.0.0"
+config-version: 2
+
 profile: ingest_projects
 
 seed-paths: ["seeds"]
